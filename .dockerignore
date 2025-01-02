@@ -1,0 +1,6 @@
+docker/
+scripts/
+
+.gitignore
+docker-compose.yaml
+.env.example
