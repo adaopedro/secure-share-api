@@ -128,7 +128,7 @@ final class UserService
     {
 
         return array_map(
-            array: await( $this->userRepository->getAllAsync() ),
+            array: await($this->userRepository->getAllAsync()),
             callback: function ($item) use ($withSensitiveData) {
                 if (!$withSensitiveData) {
                     unset($item["password"]);

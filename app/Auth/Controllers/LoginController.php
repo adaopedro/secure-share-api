@@ -21,12 +21,10 @@ final class LoginController
         $password = $data["password"] ?? "";
 
         try {
-            $jwt = $this->authService->login($email, $password);
+            $data = $this->authService->login($email, $password);
 
-            return JsonResponse::ok([
-                "message" => "success",
-                "jwt" => $jwt
-            ]);
+            return JsonResponse::ok($data);
+            
         } catch (BadRequestException $e) {
             return JsonResponse::badRequest([$e->getMessage()]);
         } catch (\Throwable $e) {

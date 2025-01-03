@@ -15,7 +15,7 @@ final class AuthService
 
     public function __construct(private UserService $userService) {}
 
-    public function login(string $email, string $password): string
+    public function login(string $email, string $password): array
     {
 
         $user = $this->userService->getByEmail($email, true);
@@ -24,7 +24,17 @@ final class AuthService
             throw new InvalidEmailOrPasswordException;
         }
 
-        return $this->generateJwt($user["id"]);
+        unset($user["password"]);
+
+        return [
+            "status" => "Success",
+            "message" => "Login bem sucesso",
+            "user_data" => $user,
+            "access_token" => [
+                "token" => $this->generateJwt($user["id"]),
+                "token_type" => "Bearer",
+            ],
+        ];
     }
 
     public function requestPasswordResetCode(string $email): int

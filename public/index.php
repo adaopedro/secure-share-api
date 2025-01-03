@@ -1,10 +1,6 @@
 <?php
-//Debug memory usage
-echo "Memory usage before loading deps (in index.php): " . round((memory_get_usage() / 1024) / 1024) . "MB \n";
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPARATOR . "autoload.php";
-
-echo "Memory usage after loading deps: " . round((memory_get_usage() / 1024) / 1024) . "MB \n";
 
 use App\Auth\Guard;
 use App\Auth\AuthService;

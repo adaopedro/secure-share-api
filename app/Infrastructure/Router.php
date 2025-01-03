@@ -43,12 +43,7 @@
                     $handler = $routeInfo[1];
                     $request->pathParams = $routeInfo[2];
 
-                    //Debug memory usage
-                    echo "Memory usage before processing the response (in Router.php): " . round ( (memory_get_usage()/1024)/1024 ) . "MB \n";
-
                     $response = $handler($request);
-                    
-                    echo "Memory usage after response (in Router.php): " . round ( (memory_get_peak_usage()/1024)/1024 ) . "MB \n";
 
                     return $response;
             }

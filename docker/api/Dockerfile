@@ -5,6 +5,8 @@ COPY . /secureshare/
 
 ENV XDEBUG_MODE=${XDEBUG_MODE}
 
-RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
+RUN composer install --ignore-platform-reqs
+# RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
+
 # CMD composer run-server
 CMD php public/index.php

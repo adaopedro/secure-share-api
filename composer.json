@@ -1,18 +1,8 @@
 {
     "name": "apedrodevelopers/secureshare-api",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/adaopedro/reactphp-http-cors-middleware"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/adaopedro/php-watcher"
-        }
-    ],
     "require": {
         "react/http": "1.11",
-        "christoph-kluge/reactphp-http-cors-middleware": "dev-master",
+        "christoph-kluge/reactphp-http-cors-middleware": "2.0.0",
         "nikic/fast-route": "^1.3",
         "react/mysql": "^0.6",
         "react/filesystem": "^0.1.2",
@@ -24,7 +14,7 @@
         "react/async": "^4.3.0"
     },
     "require-dev": {
-        "seregazhuk/php-watcher": "dev-master",
+        "seregazhuk/php-watcher": "0.5.2",
         "doctrine/migrations": "4.0.x-dev",
         "phpunit/phpunit": "^10",
         "phpstan/phpstan": "^2.0"
