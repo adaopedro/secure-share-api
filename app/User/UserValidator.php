@@ -16,7 +16,7 @@ final class UserValidator extends Validator
         "password" => "required|min:8",
         "is_admin" => "required|numeric",
         "profile_picture" => "required",
-        "password_reset_code" => "required|numeric|min:4|max:4",
+        "password_reset_code" => "required|numeric|min:4|max:10",
     ];
 
     public function validate(array $data, array $except = []): true
