@@ -8,8 +8,8 @@ final class PostValidator extends Validator
 {
 
     protected array $rules = [
-        "title" => "required|min:5|max:100",
-        "description" => "required|min:5",
+        "title" => "required|string|min:5|max:100",
+        "description" => "required|string|min:5",
         "post_type" => "required|in:Denúncia,Notícia",
         "user_id" => "required|numeric",
         "cover_photo" => "required",
