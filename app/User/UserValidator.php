@@ -10,7 +10,7 @@ final class UserValidator extends Validator
     protected array $rules = [
         "first_name" => "required|min:2|max:15",
         "last_name" => "required|min:2|max:15",
-        "nip_id" => "required|min:2|max:10|numeric",
+        "nip_id" => "required|min:2|max:10",
         "contact" => "required|min:9|max:20",
         "email" => "required|email",
         "password" => "required|min:8",
