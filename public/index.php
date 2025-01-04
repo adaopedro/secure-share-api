@@ -87,7 +87,7 @@ $routes->post(
 );
 $routes->put(
     "/users/{id:\d+}/password",
-    Guard::protect(new ResetPasswordController($userService))
+    new ResetPasswordController($userService)
 );
 $routes->get(
     "/users",
