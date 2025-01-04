@@ -37,7 +37,7 @@ final class AuthService
         ];
     }
 
-    public function requestPasswordResetCode(string $email): int
+    public function requestPasswordResetCode(string $email): array
     {
         $user = $this->userService->getByEmail($email);
 
@@ -50,7 +50,13 @@ final class AuthService
 
         // salvar o reset code! ==> user_id, reset_code, expires_at (timestamp), is_used created_at
 
-        return $passwordResetCode;
+        return [
+            "status" => "Success",
+            "message" => "Pedido de recuperacao da password aceite",
+            "user_id" => $user["id"],
+            "password_reset_code" => $passwordResetCode
+        ];
+
     }
 
     private function verifyPassword(string $informedPassword, string $savedPassword): bool

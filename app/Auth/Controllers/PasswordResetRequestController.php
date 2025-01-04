@@ -19,12 +19,9 @@ final class PasswordResetRequestController
         $email = $data["email"] ?? "";
 
         try {
-            $result = $this->authService->requestPasswordResetCode($email);
+            $data = $this->authService->requestPasswordResetCode($email);
 
-            return JsonResponse::ok([
-                "message" => "success",
-                "password_reset_code" => $result
-            ]);
+            return JsonResponse::ok($data);
         } catch (BadRequestException $e) {
             return JsonResponse::badRequest([$e->getMessage()]);
         } catch (\Throwable $e) {
